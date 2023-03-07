@@ -1,3 +1,5 @@
+import React from 'react';
+
 import './DesktopNavigation.css';
 import {ReactComponent as Logo} from './svg/logo.svg';
 import DesktopNavigationLink from '../components/DesktopNavigationLink';

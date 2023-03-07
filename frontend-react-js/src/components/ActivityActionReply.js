@@ -1,4 +1,5 @@
 import {ReactComponent as ReplyIcon} from './svg/reply.svg';
+import React from 'react';
 
 export default function ActivityActionReply(props) { 
   const onclick = (event) => {

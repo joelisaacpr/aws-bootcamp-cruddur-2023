@@ -1,3 +1,5 @@
+import React from 'react';
+
 import './JoinSection.css';
 import { Link } from "react-router-dom";
 

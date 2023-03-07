@@ -1,3 +1,5 @@
+import React from 'react';
+
 import './SuggestedUserItem.css';
 
 export default function SugestedUserItem(props) {

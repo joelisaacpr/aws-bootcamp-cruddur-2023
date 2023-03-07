@@ -1,3 +1,5 @@
+import React from 'react';
+
 import './ActivityFeed.css';
 import ActivityItem from './ActivityItem';
 
