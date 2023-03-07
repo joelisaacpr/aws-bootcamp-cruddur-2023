@@ -40,8 +40,8 @@ app = Flask(__name__)
 
 # Honeycomb -------
 # Initialize automatic instrumentation with Flask
-app = Flask(__name__)
-FlaskInstrumentor().instrument_app(app)
+jls_extract_var = FlaskInstrumentor
+jls_extract_var().instrument_app(app)
 RequestsInstrumentor().instrument()
 
 frontend = os.getenv('FRONTEND_URL')
