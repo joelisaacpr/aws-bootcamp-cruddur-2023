@@ -6,7 +6,7 @@ tracer = trace.get_tracer("home.activities")
 
 class HomeActivities:
   def run():
-    #logger.info("HomeActivities")
+    # logger.info("HomeActivities")
     with tracer.start_as_current_span ("home-activities-mock-data"):
       span = trace.get_current_span()  
       now = datetime.now(timezone.utc).astimezone()
@@ -49,4 +49,5 @@ class HomeActivities:
       'replies': []
     }
     ]
+    span.set_attribute("app.result_lenght", result_lenght)
     return results
