@@ -14,3 +14,6 @@
 
 - X-Ray is working ![xray working](https://user-images.githubusercontent.com/97815671/224150497-a3694c5f-aa97-46a3-aae9-9f0d2e8dbde8.jpg)
 
+- Rollbar ![rollbar-helloworld](https://user-images.githubusercontent.com/97815671/224200173-d547fdd4-d125-46b1-a965-e21b7e0b0056.jpg)
+
+
