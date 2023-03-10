@@ -2,6 +2,18 @@ from datetime import datetime, timedelta, timezone
 from opentelemetry import trace
 import logging
 
+logger=None
+def setup():
+   logger.debug('put some text')
+   return 0
+
+def main():
+   global logger
+   logger = logging.getLogger('give_some_logger_name')
+   logger.setLevel(logging.DEBUG)
+
+   ret = setup()
+
 tracer = trace.get_tracer("home.activities")
 
 class HomeActivities:
@@ -49,5 +61,5 @@ class HomeActivities:
       'replies': []
     }
     ]
-    span.set_attribute("app.result_lenght", result_lenght)
+    span.set_attribute("app.result_lenght", len(results))
     return results

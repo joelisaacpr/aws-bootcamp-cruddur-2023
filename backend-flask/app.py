@@ -36,6 +36,8 @@ import os
 import rollbar
 import rollbar.contrib.flask
 from flask import got_request_exception
+import logging
+LOGGER = logging.getLogger(__name__)
 
 # Configuring Logger to Use CloudWatch
 # LOGGER = logging.getLogger(__name__)
@@ -52,14 +54,13 @@ provider = TracerProvider()
 processor = BatchSpanProcessor(OTLPSpanExporter())
 provider.add_span_processor(processor)
 
-
 # X-RAY --------
 # xray_url = os.getenv("AWS_XRAY_URL")
 # xray_recorder.configure(service='backend-flask', dynamic_naming=xray_url)
 
 # Show this in the logs within the backend-flask app (STDOUT)
-simple_processor = SimpleSpanProcessor(ConsoleSpanExporter())
-provider.add_span_processor(simple_processor)
+# simple_processor = SimpleSpanProcessor(ConsoleSpanExporter())
+# provider.add_span_processor(simple_processor)
 
 trace.set_tracer_provider(provider)
 tracer = trace.get_tracer(__name__)
@@ -152,8 +153,9 @@ def data_create_message():
   return
 
 @app.route("/api/activities/home", methods=['GET'])
-def data_home():
-  data = HomeActivities.run(Logger=LOGGER)
+def run():
+  logger = logging.getLogger(__name__)
+  activities = HomeActivities()
   return data, 200
 
 @app.route("/api/activities/@<string:handle>", methods=['GET'])
