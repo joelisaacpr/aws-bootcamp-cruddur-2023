@@ -6,3 +6,5 @@
 
 - I´m getting Authentication Error![aut_error](https://user-images.githubusercontent.com/97815671/224521942-b1c48653-92c8-496d-ad3e-86b486a9a0c1.jpg)
 ![sing up error](https://user-images.githubusercontent.com/97815671/224521945-072eb62e-d2d7-47a4-bc89-1208c38d7c72.jpg)
+
+- I´m stuck, I need help SOS
