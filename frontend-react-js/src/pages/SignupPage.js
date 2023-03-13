@@ -18,6 +18,7 @@ export default function SignupPage() {
   const onsubmit = async (event) => {
     event.preventDefault();
     setErrors('')
+    console.log(name, email, username, password);
     try {
       const { user } = await Auth.signUp({
         username: email,
@@ -31,15 +32,15 @@ export default function SignupPage() {
           enabled: true,
         }
       });
-        console.log(user);
+      console.log(user);
+      if(user){
         window.location.href = `/confirm?email=${email}`
+      }
     } catch (error) {
-        console.log(error);
-        setErrors(error.message)
+      console.log(error);
+      setErrors(error.message)
     }
-    return false
   }
-  
 
   const name_onchange = (event) => {
     setName(event.target.value);
@@ -91,15 +92,6 @@ export default function SignupPage() {
 
             <div className='field text_field username'>
               <label>Username</label>
-              <input
-                type="text"
-                value={username}
-                onChange={username_onchange} 
-              />
-            </div>
-
-            <div className='field text_field password'>
-              <label>Password</label>
               <input
                 type="password"
                 value={password}

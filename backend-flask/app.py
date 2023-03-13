@@ -87,6 +87,14 @@ cors = CORS(
   methods="OPTIONS,GET,HEAD,POST"
 )
 
+cors = CORS(
+  app, 
+  resources={r"/api/*": {"origins": origins}},
+  headers=['Content-Type', 'Authorization'], 
+  expose_headers='Authorization',
+  methods="OPTIONS,GET,HEAD,POST"
+)
+
 # @app.after_request
 # def after_request(response):
 #    timestamp = strftime('[%Y-%b-%d %H:%M]')
