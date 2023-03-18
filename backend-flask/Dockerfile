@@ -1,5 +1,9 @@
 FROM python:3.10-slim-buster
 
+# Install PostgreSQL
+RUN apt-get update && \
+    apt-get install -y postgresql
+    
 WORKDIR /backend-flask
 
 COPY requirements.txt requirements.txt
