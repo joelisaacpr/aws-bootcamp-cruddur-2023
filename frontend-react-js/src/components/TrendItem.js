@@ -1,5 +1,4 @@
 import './TrendItem.css';
-import React from 'react';
 
 export default function TrendItem(props) {
   const commify = (n) => {
