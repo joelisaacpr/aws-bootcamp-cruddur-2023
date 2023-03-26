@@ -29,10 +29,7 @@ class HomeActivities:
         LEFT JOIN public.users ON users.uuid = activities.user_uuid
         ORDER BY activities.created_at DESC
     """)
-    print("SQL----------")
-    print(sql)
-    print("SQL----------")
-    
+     
     print("-1----")
     print(json[0])
     return json[0]

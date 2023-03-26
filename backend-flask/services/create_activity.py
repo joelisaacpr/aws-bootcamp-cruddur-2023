@@ -64,9 +64,10 @@ class CreateActivity:
       "{user_uuid}",
       "{message}"
       "{expires_at}"
-    )
+    ) RETURNING uuid;
     """
-    # query_commit(sql)
+    query_commit(sql)
+  def query_object_activity():
 
    
 
