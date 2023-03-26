@@ -1,6 +1,7 @@
 import './TrendItem.css';
+import React from 'react';
 
-export default function TrendItem(props) {
+function TrendItem(props) {
   const commify = (n) => {
     var parts = n.toString().split(".");
     const numberPart = parts[0];
@@ -10,9 +11,16 @@ export default function TrendItem(props) {
   }
 
   return (
-    <a className="trending" href="#">
-      <span className="hashtag">#{props.hashtag}</span>
-      <span className="count">#{commify(props.count)} cruds</span>
-    </a>
+    <div>
+      <h2>{props.title}</h2>
+      <p>{props.description}</p>
+      <img src={props.imageUrl} alt={props.title} />
+      <a className="trending" href="#">
+        <span className="hashtag">#{props.hashtag}</span>
+        <span className="count">#{commify(props.count)} cruds</span>
+      </a>
+    </div>
   );
 }
+
+export default TrendItem;
