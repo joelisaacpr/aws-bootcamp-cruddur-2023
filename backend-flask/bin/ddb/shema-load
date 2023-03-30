@@ -8,14 +8,14 @@ attrs = {
 }
 
 if len(sys.argv) == 2:
-  if "prod" in i sys.argv[1]:
+  if "prod" in sys.argv[1]:
     attrs = {}
 
-dynamodb = boto3.client('dynamodb',**attrs)
+ddb = boto3.client('dynamodb',**attrs)
 
 table_name = 'cruddur-message'
 
-response = client.create_table(
+response = ddb.create_table(
     TableName=table_name,
     AttributeDefinitions=[
         {
@@ -45,3 +45,5 @@ response = client.create_table(
         'WriteCapacityUnits': 5
     }
 )
+
+print(response)
